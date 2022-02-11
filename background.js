@@ -8,7 +8,7 @@ chrome.browserAction.onClicked.addListener(function (tab) {
       if (streamId && streamId.length) {
         setTimeout(() => {
           chrome.tabs.sendMessage(tab.id, {name: "stream", streamId}, (response) => console.log(response))
-      }, 200)
+      }, 200);
       }
     }
   );
@@ -21,8 +21,7 @@ chrome.runtime.onMessage.addListener((message, sender, senderResponse) => {
       }, (downloadId) => {
           senderResponse({success: true})
       })
-
-      return true;
   }
+  return true;
 })
 
