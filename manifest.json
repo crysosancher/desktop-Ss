@@ -1,0 +1,29 @@
+{
+	"name": "Screenshots",
+	"version": "0.0.1",
+	"description": "Take screenshots",
+	"manifest_version": 2,
+	"browser_action":{
+		"default_title":"Take a ScreenShot"
+
+	},
+	"icons": {
+	    
+	    "128": "ss.png"
+	},
+	"permissions": [
+		"desktopCapture",
+		"tabs",
+		"downloads"
+	    ],
+	    "background": {
+		"scripts": ["background.js"],
+		"persistent":false
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["content_script.js"]
+		}
+	    ]
+    }
